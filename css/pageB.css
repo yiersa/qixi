@@ -42,7 +42,7 @@
     background-size: 100% 100%;
 }
 .door-right {
-    right: 0%;
+    left: 50%;
     background: url("../images/door-right.png");
     background-size: 100% 100%;
 }

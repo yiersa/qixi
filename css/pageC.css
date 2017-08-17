@@ -240,13 +240,13 @@
     }
 }
 .logo {
-    width: 185px;
-    height: 81px;
+    width: 285px;
+    height: 80px;
     background-image: url('../images/logo.png');
     z-index: 999999;
     position: absolute;
     left: 50%;
-    margin-left: -92.5px;
+    margin-left: -127.5px;
     top: 30px;
     display: none;
 }
