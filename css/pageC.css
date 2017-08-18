@@ -240,8 +240,8 @@
     }
 }
 .logo {
-    width: 285px;
-    height: 80px;
+    width: 340px;
+    height: 130px;
     background-image: url('../images/logo.png');
     z-index: 999999;
     position: absolute;
