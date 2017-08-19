@@ -17,7 +17,7 @@ function init(){
     	audio.loop = false;
 		audio.play();
 		
-		var audioC = new Audio(url);
+		var audioC = new Audio(audioConfig.cycleURL);
     	audioC.autoPlay = true;
     	audioC.loop = true;
 		
