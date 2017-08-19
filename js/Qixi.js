@@ -11,17 +11,21 @@ function init(){
         playURL: 'music/happy.wav', // 正常播放地址
         cycleURL: 'music/circulation.wav' // 正常循环播放地址
     };
-    function Html5Audio(url, isloop){
+    function Html5Audio(url){
     	var audio = new Audio(url);
     	audio.autoPlay = true;
-    	audio.loop = isloop || false;
-    	audio.play();
+    	audio.loop = false;
+		audio.play();
+		
+		var audioC = new Audio(url);
+    	audioC.autoPlay = true;
+    	audioC.loop = true;
+		
+		audio.addEventListener('ended',function(){
+			audioC.play();
+		}, false);
+
     	return {
-    		end : function(callback){
-    			audio.addEventListener('ended',function(){
-    				callback();
-    			}, false);
-			},
 			start : function(callback) {
 				audio.addEventListener("canplay", function(){
 					callback();
@@ -33,9 +37,6 @@ function init(){
 	var audio1 = Html5Audio(audioConfig.playURL);
 	audio1.start(function(){
 		initFunction();
-	})
-	audio1.end(function(){
-		Html5Audio(audioConfig.cycleURL, true);
 	})
 
 	//等音乐加载好在初始化
