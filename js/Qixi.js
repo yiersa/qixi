@@ -27,7 +27,11 @@ function init(){
     			}, false);
     		}
     	}
-    }
+	}
+	var audio1 = Html5Audio(audioConfig.playURL);
+	audio1.end(function(){
+		Html5Audio(audioConfig.cycleURL, true);
+	})
 	/*var birdgeY = (function(){
 		var data = getValue('.c_background_middle');
 		return data.top;
@@ -88,10 +92,7 @@ function init(){
      // 飘云
         $(".cloud:first").addClass('cloud1Anim');
         $(".cloud:last").addClass('cloud2Anim');
-        var audio1 = Html5Audio(audioConfig.playURL);
-        audio1.end(function(){
-        	Html5Audio(audioConfig.cycleURL, true);
-        })
+        
 		//第一次走路，花2000ms走到x的0.5倍的地方，
 		boy.walkTo(2000,0.5)//这个时候返回的是一个deffer对象，只有deffer对象resolve之后，才会执行then中的操作
 		//第一次走路结束
